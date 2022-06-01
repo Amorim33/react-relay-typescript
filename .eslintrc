@@ -58,23 +58,9 @@
     "react/sort-comp": 0,
     "react/jsx-one-expression-per-line": 0,
     "react/require-default-props":0,
-    "semi": [
-      "error",
-      "never"
-    ],
-    "semi-style": [
-      "error",
-      "first"
-    ],
-    "space-in-parens": [
-      "error",
-      "always",
-      {
-        "exceptions": [
-          "empty"
-        ]
-      }
-    ],
+    "semi": 0,
+    "semi-style":0,
+    "space-in-parens": 0,
     "no-multiple-empty-lines": [
       "error", { 
         "max": 1,
@@ -93,6 +79,8 @@
         {
           "allow": ["warn", "error"]
         }
-      ]
+      ],
+      "jsx-quotes":0
+
   }
 }

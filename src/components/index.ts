@@ -7,3 +7,4 @@
 export * from './global'
 export * from './relay'
 export * from './Character'
+export * from './CharacterList'

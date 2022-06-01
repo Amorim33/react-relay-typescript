@@ -39,7 +39,7 @@ type Character {
   image: String
 
   """Episodes in which this character appeared."""
-  episode: [Episode]
+  episode: [Episode]!
 
   """Time at which the character was created in the database."""
   created: String
@@ -64,7 +64,7 @@ type Episode {
   episode: String
 
   """List of characters who have been seen in the episode."""
-  characters: [Character]
+  characters: [Character]!
 
   """Time at which the episode was created in the database."""
   created: String
@@ -122,7 +122,7 @@ type Location {
   dimension: String
 
   """List of characters who have been last seen in the location."""
-  residents: [Character]
+  residents: [Character]!
 
   """Time at which the location was created in the database."""
   created: String
@@ -135,22 +135,31 @@ type Locations {
 
 type Query {
   """Get a specific character by ID"""
-  character(id: ID): Character
+  character(id: ID!): Character
 
   """Get the list of all characters"""
   characters(page: Int, filter: FilterCharacter): Characters
 
+  """Get a list of characters selected by ids"""
+  charactersByIds(ids: [ID!]!): [Character]
+
   """Get a specific locations by ID"""
-  location(id: ID): Location
+  location(id: ID!): Location
 
   """Get the list of all locations"""
   locations(page: Int, filter: FilterLocation): Locations
 
+  """Get a list of locations selected by ids"""
+  locationsByIds(ids: [ID!]!): [Location]
+
   """Get a specific episode by ID"""
-  episode(id: ID): Episode
+  episode(id: ID!): Episode
 
   """Get the list of all episodes"""
   episodes(page: Int, filter: FilterEpisode): Episodes
+
+  """Get a list of episodes selected by ids"""
+  episodesByIds(ids: [ID!]!): [Episode]
 }
 
 """The `Upload` scalar type represents a file upload."""
